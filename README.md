@@ -7,17 +7,20 @@
 
 MeshSats is a sovereign, offline-first Bitcoin settlement protocol designed for the African market. It bridges the connectivity gap by allowing merchants to capture signed payment intents offline and settle them via the Lightning Network once a mesh node reaches a backbone gateway.
 
-## 🚀 Mind-Blowing Web3 Platform (.btc)
-MeshSats now features a high-fidelity, glassmorphism-driven dashboard for real-time mesh monitoring. 
-**Pushed and deployed natively from the git.**
+## 🚀 Expert Web3 Infrastructure (.btc)
+MeshSats is built with a world-class multi-language stack optimized for Bitcoin-layer security and performance.
+
+- **Rust Protocols:** Core cryptographic logic for BIP-340 Schnorr signatures and Discreet Log Contracts (DLCs) located in `protocols/`.
+- **Go Sync Engine:** High-concurrency settlement manager for offline-to-lightning transition in `backend/`.
+- **TypeScript Frontend:** Type-safe web3 interface for merchant monitoring and channel management in `frontend/`.
 
 - **Offline-to-Online Bridge:** Securely capture payments in zero-connectivity environments.
 - **Lightning Native:** Instant settlement via LN channels.
 - **Node-Mesh Visualization:** Visual feedback for peer-to-peer relay status.
-- **Bitcoin Layer Focused:** Built with Go (backend) and React (frontend) using Bitcoin-centric patterns (DLCs, Schnorr, LN).
+- **Bitcoin Layer Focused:** Native support for PSBT, Schnorr, and LDK/BDK patterns.
 
-### Premium Dashboard Implementation
-Our reference frontend demonstrates real-time channel liquidity management and node discovery processes essential for offline-first Bitcoin infrastructure.
+### Premium Stack Implementation
+This repository demonstrates an industry-leading approach to offline-first Bitcoin infrastructure, utilizing the best-of-breed languages for each layer.
 
 ---
 

@@ -14,6 +14,20 @@ import {
   X
 } from 'lucide-react';
 
+const MeshLogo = ({ size = 32 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="48" stroke="#F7931A" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
+    <path d="M50 20V80" stroke="#F7931A" strokeWidth="4" strokeLinecap="round" />
+    <path d="M35 30H65C70 30 75 35 75 42.5C75 50 70 55 65 55H35V30Z" stroke="#F7931A" strokeWidth="6" strokeLinejoin="round" />
+    <path d="M35 55H65C70 55 75 60 75 67.5C75 75 70 80 65 80H35V55Z" stroke="#F7931A" strokeWidth="6" strokeLinejoin="round" />
+    <path d="M20 50L35 35M20 50L35 65M80 50L65 35M80 50L65 65M50 20L65 10M50 80L35 90" stroke="#4ADE80" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="20" cy="50" r="4" fill="#4ADE80" />
+    <circle cx="80" cy="50" r="4" fill="#4ADE80" />
+    <circle cx="65" cy="10" r="4" fill="#4ADE80" />
+    <circle cx="35" cy="90" r="4" fill="#4ADE80" />
+  </svg>
+);
+
 const App = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [connecting, setConnecting] = useState(false);
@@ -37,9 +51,9 @@ const App = () => {
     <div className="min-h-screen">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="flex items-center gap-2">
-          <Zap className="text-bitcoin" size={32} fill="#f7931a" />
-          <span className="text-2xl font-bold tracking-tighter">MeshSats</span>
+        <div className="flex items-center gap-3">
+          <MeshLogo size={42} />
+          <span className="text-2xl font-extrabold tracking-tighter uppercase gradient-text">MeshSats</span>
         </div>
         <div className="hidden md:flex gap-8 items-center text-sm font-medium">
           <a href="#features" className="hover:text-bitcoin transition-colors">Protocol</a>

@@ -39,7 +39,7 @@ const App = () => {
       <nav className="navbar">
         <div className="flex items-center gap-2">
           <Zap className="text-bitcoin" size={42} fill="#f7931a" />
-          <span className="text-2xl font-extrabold tracking-tighter uppercase gradient-text">MeshSats</span>
+          <span className="text-2xl font-extrabold tracking-tighter gradient-text">MeshSats</span>
         </div>
         <div className="hidden md:flex gap-8 items-center text-sm font-medium">
           <a href="#features" className="hover:text-bitcoin transition-colors">Protocol</a>

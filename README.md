@@ -7,17 +7,18 @@
 
 MeshSats is a sovereign, offline-first Bitcoin settlement protocol designed for the African market. It bridges the connectivity gap by allowing merchants to capture signed payment intents offline and settle them via the Lightning Network once a mesh node reaches a backbone gateway.
 
-## 🚀 Expert Web3 Infrastructure (.btc)
-MeshSats is built with a world-class multi-language stack optimized for Bitcoin-layer security and performance.
+## 🚀 Ultimate Expert Stack (.btc)
+MeshSats is a multi-language powerhouse, utilizing the specific strengths of the top Bitcoin-layer languages:
 
-- **Rust Protocols:** Core cryptographic logic for BIP-340 Schnorr signatures and Discreet Log Contracts (DLCs) located in `protocols/`.
-- **Go Sync Engine:** High-concurrency settlement manager for offline-to-lightning transition in `backend/`.
-- **TypeScript Frontend:** Type-safe web3 interface for merchant monitoring and channel management in `frontend/`.
+- **Go (Golang):** High-performance infrastructure for Lightning Network settlement and backend services (`backend/`).
+- **Rust:** Secure protocol suite for BIP-340 Schnorr signatures and Discreet Log Contracts (DLCs) (`protocols/`).
+- **Python:** Expert-level prototyping, blockchain analysis, and liquidity modeling tools (`tools/`).
+- **TypeScript (React):** Type-safe, premium web3 interface for merchant monitoring and mesh status (`frontend/`).
+- **Clarity (Stacks):** Smart contracts for trust-minimized, Bitcoin-anchored settlement logic (`contracts/`).
 
 - **Offline-to-Online Bridge:** Securely capture payments in zero-connectivity environments.
 - **Lightning Native:** Instant settlement via LN channels.
-- **Node-Mesh Visualization:** Visual feedback for peer-to-peer relay status.
-- **Bitcoin Layer Focused:** Native support for PSBT, Schnorr, and LDK/BDK patterns.
+- **Expert Engineering:** Built with native support for PSBT, Schnorr, and LDK/BDK patterns.
 
 ### Premium Stack Implementation
 This repository demonstrates an industry-leading approach to offline-first Bitcoin infrastructure, utilizing the best-of-breed languages for each layer.

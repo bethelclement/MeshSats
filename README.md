@@ -1,12 +1,12 @@
 # MeshSats: Offline-First Bitcoin Infrastructure
 
-[![Deploy with Vercel](https://vercel.com/button)](https://meshsats.vercel.app)
+[![Deploy to GitHub Pages](https://github.com/bethelclement/MeshSats/actions/workflows/deploy.yml/badge.svg)](https://bethelclement.github.io/MeshSats/)
 > **Status:** Mainnet Beta & Infrastructure Preview  
-> **Live Demo:** [meshsats.vercel.app](https://meshsats.vercel.app)
+> **World Wide Web:** [meshsats.btc](https://bethelclement.github.io/MeshSats/) (via GitHub Pages)
 
 MeshSats is a sovereign, offline-first Bitcoin settlement protocol designed for the African market. It bridges the connectivity gap by allowing merchants to capture signed payment intents offline and settle them via the Lightning Network once a mesh node reaches a backbone gateway.
 
-## 🚀 Mind-Blowing Web3 Platform
+## 🚀 Mind-Blowing Web3 Platform (.btc)
 MeshSats now features a high-fidelity, glassmorphism-driven dashboard for real-time mesh monitoring.
 
 - **Offline-to-Online Bridge:** Securely capture payments in zero-connectivity environments.

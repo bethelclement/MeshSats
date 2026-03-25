@@ -215,7 +215,7 @@ const App = () => {
         </p>
         <button className="btn-primary px-10 py-3">Join the Discord</button>
         <div className="mt-12 text-sm text-gray-600">
-          © 2026 MeshSats Protocol. Sovereign Offline Settlements.
+          © 2026 MeshSats Protocol. Sovereign Offline Settlements via <span className="text-bitcoin">meshsats.btc</span>
         </div>
       </footer>
     </div>

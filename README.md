@@ -1,5 +1,7 @@
 # MeshSats: Offline-First Bitcoin Infrastructure
 
+![MeshSats Logo](assets/branding/logo.svg)
+
 [![Live Platform](https://img.shields.io/badge/Status-Mainnet_Beta-orange?style=for-the-badge&logo=bitcoin)](https://bethelclement.github.io/MeshSats/)
 > **World Wide Web:** [meshsats.btc](https://bethelclement.github.io/MeshSats/) (Live via GitHub Pages)
 

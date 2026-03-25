@@ -1,5 +1,5 @@
 # MeshSats: Offline-First Bitcoin Infrastructure
-![MeshSats Techy Logo](assets/branding/techy_logo.png)
+![MeshSats Techy Logo](assets/branding/logo.png)
 
 [![Live Platform](https://img.shields.io/badge/Status-Mainnet_Beta-orange?style=for-the-badge&logo=bitcoin)](https://bethelclement.github.io/MeshSats/)
 > **World Wide Web:** [meshsats.btc](https://bethelclement.github.io/MeshSats/) (Live via GitHub Pages)
@@ -66,11 +66,13 @@ We do not claim impossible "trustless offline Bitcoin." MeshSats is built on pra
 
 ```text
 ├── docs/               # Detailed architecture, use cases, and risk models
-├── backend/            # Sync engine and Lightning integration layer (Stub)
-├── frontend/           # Merchant & Agent dashboard reference implementation (Stub)
-├── mobile/             # Client-side offline intent capture prototype (Stub)
+├── backend/            # Sync engine and Lightning integration layer (Go)
+├── protocols/          # Cryptographic protocol suite (Rust)
+├── tools/              # Infrastructure analysis & liquidity tools (Python)
+├── contracts/          # Bitcoin-anchored settlement logic (Clarity)
+├── frontend/           # Merchant & Agent dashboard (React/JS)
 ├── assets/             # Branding and diagrams
-└── .github/            # Project governance and contribution templates
+└── .github/            # Project governance and deployment
 ```
 
 ## Roadmap

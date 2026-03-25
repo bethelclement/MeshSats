@@ -232,40 +232,47 @@
 
         async function selectWallet(type) {
             const status = document.getElementById('modalStatus');
-            status.innerText = `Connecting to ${type}...`;
+            const isMobile = /android/i.test(navigator.userAgent) || (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream);
             
+            status.innerText = `Redirecting to ${type}...`;
+            
+            const links = {
+                leather: {
+                    browser: "https://chrome.google.com/webstore/detail/leather/oofbaiooifeghglhongonbmgnafeclag",
+                    mobile: "https://leather.io/download"
+                },
+                xverse: {
+                    browser: "https://chrome.google.com/webstore/detail/xverse-wallet/idnnbpabpgbdjonnllnneenagpfolpne",
+                    mobile: "https://xverse.app/download"
+                },
+                binance: {
+                    browser: "https://chrome.google.com/webstore/detail/binance-wallet/fhbohgcigdhpcehlhpcfjnadhiooijbh",
+                    mobile: "https://www.binance.com/en/download"
+                },
+                trust: {
+                    browser: "https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpgmcnihpkmhpebbcnmihlgebd",
+                    mobile: "https://trustwallet.com/download"
+                }
+            };
+
             try {
                 let address = null;
                 
-                if (type === 'leather') {
-                    if (window.StacksProvider) {
-                        // Simulated Stacks auth for demo stability
-                        address = "SP2...MNET";
-                    } else throw new Error("Leather not installed");
-                } 
-                else if (type === 'xverse') {
-                    if (window.XverseProviders || window.btc) {
-                        address = "bc1q...xvrz";
-                    } else throw new Error("Xverse not installed");
-                }
-                else if (type === 'binance') {
-                    if (window.BinanceChain) {
-                        address = "bc1p...bnc";
-                    } else throw new Error("Binance Wallet not installed");
-                }
-                else if (type === 'trust') {
-                    if (window.trustwallet) {
-                        address = "bc1p...trst";
-                    } else throw new Error("Trust Wallet not installed");
-                }
+                // 1. Check for Provider first
+                if (type === 'leather' && window.StacksProvider) address = "SP2...MNET";
+                else if (type === 'xverse' && (window.XverseProviders || window.btc)) address = "bc1q...xvrz";
+                else if (type === 'binance' && window.BinanceChain) address = "bc1p...bnc";
+                else if (type === 'trust' && window.trustwallet) address = "bc1p...trst";
 
                 if (address) {
-                    currentAddress = address;
                     handleSuccess(type, address);
+                } else {
+                    // 2. Force Redirect if not detected
+                    window.location.href = isMobile ? links[type].mobile : links[type].browser;
                 }
             } catch (err) {
-                status.innerText = `Error: ${err.message}`;
-                setTimeout(() => status.innerText = "", 2000);
+                console.error(err);
+                window.location.href = isMobile ? links[type].mobile : links[type].browser;
             }
         }
 

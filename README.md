@@ -1,6 +1,5 @@
 # MeshSats: Offline-First Bitcoin Infrastructure
-
-![MeshSats Logo](assets/branding/logo.svg)
+![MeshSats Techy Logo](assets/branding/techy_logo.png)
 
 [![Live Platform](https://img.shields.io/badge/Status-Mainnet_Beta-orange?style=for-the-badge&logo=bitcoin)](https://bethelclement.github.io/MeshSats/)
 > **World Wide Web:** [meshsats.btc](https://bethelclement.github.io/MeshSats/) (Live via GitHub Pages)
@@ -10,11 +9,11 @@ MeshSats is a sovereign, offline-first Bitcoin settlement protocol designed for 
 ## 🚀 Ultimate Expert Stack (.btc)
 MeshSats is a multi-language powerhouse, utilizing the specific strengths of the top Bitcoin-layer languages:
 
-- **Go (Golang):** High-performance infrastructure for Lightning Network settlement and backend services (`backend/`).
-- **Rust:** Secure protocol suite for BIP-340 Schnorr signatures and Discreet Log Contracts (DLCs) (`protocols/`).
-- **Python:** Expert-level prototyping, blockchain analysis, and liquidity modeling tools (`tools/`).
-- **TypeScript (React):** Type-safe, premium web3 interface for merchant monitoring and mesh status (`frontend/`).
-- **Clarity (Stacks):** Smart contracts for trust-minimized, Bitcoin-anchored settlement logic (`contracts/`).
+- **Go (Golang):** High-performance infrastructure for Lightning Network settlement (`backend/`).
+- **Rust:** Secure protocol suite for BIP-340 Schnorr and DLC signatures (`protocols/`).
+- **Python:** Expert-level blockchain analysis and liquidity modeling (`tools/`).
+- **JavaScript (React):** Ultra-robust, zero-dependency interface for Safari compatibility (`frontend/`).
+- **Clarity (Stacks):** Smart contracts for trust-minimized, Bitcoin-anchored logic (`contracts/`).
 
 - **Offline-to-Online Bridge:** Securely capture payments in zero-connectivity environments.
 - **Lightning Native:** Instant settlement via LN channels.

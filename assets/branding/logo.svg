@@ -1,4 +1,6 @@
-<svg width="512" height="512" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="24" height="24" rx="4" fill="#04080F"/>
-  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#F7931A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#F7931A" fill-opacity="0.2"/>
+<svg width="512" height="120" viewBox="0 0 512 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="120" rx="20" fill="#04080F"/>
+  <path d="M60 20L40 65H65L55 100L95 45H70L80 20H60Z" fill="#F7931A"/>
+  <text x="120" y="75" fill="white" font-family="Outfit, sans-serif" font-weight="800" font-size="64" letter-spacing="-2">MeshSats</text>
+  <path d="M120 85H400" stroke="#F7931A" stroke-width="2" opacity="0.2"/>
 </svg>

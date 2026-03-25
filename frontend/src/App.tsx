@@ -19,12 +19,47 @@ const App = () => {
   const [connecting, setConnecting] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
 
-  const connectWallet = () => {
+  const [walletType, setWalletType] = useState(null);
+
+  const connectWallet = async () => {
     setConnecting(true);
-    setTimeout(() => {
+    try {
+      // Logic for Stacks (Leather/Hiro)
+      if (window.StacksProvider) {
+        console.log("Stacks Wallet Detected");
+        // Simulated connection logic
+        setTimeout(() => {
+          setIsWalletConnected(true);
+          setWalletType('Stacks');
+          setConnecting(false);
+          alert("Connected to Leather (Stacks) Wallet!");
+        }, 800);
+      } 
+      // Logic for Bitcoin (Xverse/Unisat/OKX)
+      else if (window.btc || window.unisat) {
+        console.log("Bitcoin Wallet Detected");
+        setTimeout(() => {
+          setIsWalletConnected(true);
+          setWalletType('Bitcoin');
+          setConnecting(false);
+          alert("Connected to Bitcoin Wallet!");
+        }, 800);
+      }
+      // Mobile / No Extension Fallback
+      else {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
+          alert("Opening Bitcoin Ecosystem App...");
+          window.location.href = "https://xverse.app/download"; // Example deep link
+        } else {
+          alert("No Bitcoin/Stacks wallet detected. Please install Leather or Xverse extension for Safari/Chrome!");
+        }
+        setConnecting(false);
+      }
+    } catch (err) {
+      console.error("Connection failed", err);
       setConnecting(false);
-      setIsWalletConnected(true);
-    }, 1500);
+    }
   };
 
   const transactions = [
@@ -37,32 +72,30 @@ const App = () => {
     <div className="min-h-screen">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="flex items-center gap-2">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity bg-transparent border-none cursor-pointer"
+        >
           <Zap className="text-bitcoin" size={42} fill="#f7931a" />
           <span className="text-2xl font-extrabold tracking-tighter gradient-text">MeshSats</span>
-        </div>
+        </button>
         <div className="hidden md:flex gap-8 items-center text-sm font-medium">
           <a href="#features" className="hover:text-bitcoin transition-colors">Protocol</a>
           <a href="#network" className="hover:text-bitcoin transition-colors">Network</a>
           <a href="#docs" className="hover:text-bitcoin transition-colors">Docs</a>
-          <button 
-            onClick={connectWallet}
-            className={`btn-primary flex items-center gap-2 ${connecting ? 'opacity-70' : ''}`}
-            disabled={connecting || isWalletConnected}
-          >
-            {isWalletConnected ? (
-              <><CheckCircle2 size={18} /> Connected</>
-            ) : connecting ? (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-              >
-                <Cpu size={18} />
-              </motion.div>
-            ) : (
-              <><Wallet size={18} /> Connect Wallet</>
-            )}
-          </button>
+        <button 
+          onClick={connectWallet}
+          className={`btn-primary px-6 py-2 flex items-center gap-2 ${connecting ? 'animate-pulse' : ''}`}
+          disabled={connecting || isWalletConnected}
+        >
+          {isWalletConnected ? (
+            <><CheckCircle2 size={18} /> {walletType ? `Connected (${walletType})` : 'Connected'}</>
+          ) : connecting ? (
+            <>Detecting...</>
+          ) : (
+            <><Wallet size={18} /> Connect Wallet</>
+          )}
+        </button>
         </div>
       </nav>
 

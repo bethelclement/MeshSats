@@ -74,10 +74,10 @@ const App = () => {
       <nav className="navbar">
         <button 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity bg-transparent border-none cursor-pointer"
+          className="flex items-center gap-1 hover:opacity-80 transition-opacity bg-transparent border-none cursor-pointer group"
         >
-          <Zap className="text-bitcoin" size={42} fill="#f7931a" />
-          <span className="text-2xl font-extrabold tracking-tighter gradient-text">MeshSats</span>
+          <Zap className="text-bitcoin group-hover:drop-shadow-[0_0_10px_rgba(247,147,26,0.5)]" size={42} fill="#f7931a" />
+          <span className="text-3xl font-bold tracking-tighter gradient-text tech-text-effect">MeshSats</span>
         </button>
         <div className="hidden md:flex gap-8 items-center text-sm font-medium">
           <a href="#features" className="hover:text-bitcoin transition-colors">Protocol</a>
@@ -101,11 +101,7 @@ const App = () => {
 
       {/* Hero Section */}
       <section className="hero">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className="fade-in-up">
           <div className="status-badge mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -113,10 +109,10 @@ const App = () => {
             </span>
             Mainnet Beta Live
           </div>
-          <h1 className="gradient-text leading-tight">
-            The Bitcoin Mesh Layer <br /> for Offline Settlements
+          <h1 className="gradient-text leading-tight tech-text-effect">
+            THE BITCOIN MESH LAYER <br /> FOR OFFLINE SETTLEMENTS
           </h1>
-          <p>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
             Bridging the connectivity gap in African markets. 
             Capture Bitcoin payments anywhere, settle whenever you're back online. 
             No internet? No problem.
@@ -135,7 +131,7 @@ const App = () => {
               View Specs
             </button>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Features Grid */}
@@ -196,12 +192,10 @@ const App = () => {
                   <span>Remote Balance</span>
                 </div>
                 <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden flex">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: "65%" }}
-                    transition={{ duration: 1, delay: 0.5 }}
+                  <div 
+                    style={{ width: "65%" }}
                     className="h-full bg-bitcoin"
-                  ></motion.div>
+                  ></div>
                   <div className="h-full bg-mesh-green/30 w-[35%]"></div>
                 </div>
                 <div className="flex justify-between mt-2 font-mono text-xs">
@@ -212,11 +206,8 @@ const App = () => {
 
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4">Live Transactions</h3>
               {transactions.map((tx, i) => (
-                <motion.div 
+                <div 
                   key={tx.id}
-                  initial={{ x: 50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ delay: i * 0.1 }}
                   className="bg-white/5 border border-white/10 p-4 rounded-xl flex justify-between items-center hover:bg-white/10 transition-colors"
                 >
                   <div className="flex items-center gap-4">
@@ -235,7 +226,7 @@ const App = () => {
                       {tx.status}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
               <div className="pt-4 flex justify-between items-center text-sm text-gray-500">
                 <span>View all activity</span>
@@ -262,19 +253,13 @@ const App = () => {
 };
 
 const FeatureCard = ({ icon, title, description, delay }) => (
-  <motion.div 
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay }}
-    className="glass-card"
-  >
+  <div className="glass-card">
     <div className="bg-bitcoin/10 w-fit p-4 rounded-2xl mb-6">
       {React.cloneElement(icon, { size: 32 })}
     </div>
     <h3 className="text-xl font-bold mb-4">{title}</h3>
     <p className="text-gray-400">{description}</p>
-  </motion.div>
+  </div>
 );
 
 const styles = `

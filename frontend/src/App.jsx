@@ -103,10 +103,16 @@ const App = () => {
             No internet? No problem.
           </p>
           <div className="flex justify-center gap-4">
-            <button className="btn-primary flex items-center gap-2 px-8 py-4 text-lg">
+            <button 
+              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary flex items-center gap-2 px-8 py-4 text-lg"
+            >
               Get Started <ArrowRight size={20} />
             </button>
-            <button className="glass-card flex items-center gap-2 px-8 py-4 text-lg border-white/10">
+            <button 
+              onClick={() => alert("MeshSats v1.0.0-beta Protocol Specs Loading...")}
+              className="glass-card flex items-center gap-2 px-8 py-4 text-lg border-white/10"
+            >
               View Specs
             </button>
           </div>
